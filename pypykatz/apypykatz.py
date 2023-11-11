@@ -124,7 +124,6 @@ class apypykatz:
 	@staticmethod
 	async def parse_minidump_external(handle, packages = ['all'], chunksize=10*1024):
 		"""
-		Parses LSASS minidump file based on the file object.
 		File object can really be any object as longs as 
 		it implements read, seek, tell functions with the 
 		same parameters as a file object would.
