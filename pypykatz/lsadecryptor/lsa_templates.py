@@ -16,29 +16,15 @@ class LsaTemplate:
 
 	@staticmethod
 	def get_template_brute(sysinfo):
-		if sysinfo.architecture == KatzSystemArchitecture.X86:
-			if sysinfo.buildnumber < WindowsMinBuild.WIN_VISTA.value:
-				return LsaTemplate_NT5.get_template_brute(sysinfo)
-			else:
-				return LsaTemplate_NT6.get_template_brute(sysinfo)
+		if sysinfo.buildnumber < WindowsMinBuild.WIN_VISTA.value:
+			return LsaTemplate_NT5.get_template_brute(sysinfo)
+		else:
+			return LsaTemplate_NT6.get_template_brute(sysinfo)
 
-		elif sysinfo.architecture == KatzSystemArchitecture.X64:
-			if sysinfo.buildnumber < WindowsMinBuild.WIN_VISTA.value:
-				return LsaTemplate_NT5.get_template_brute(sysinfo)
-			else:
-				return LsaTemplate_NT6.get_template_brute(sysinfo)
 
-	
 	@staticmethod
-	def get_template(sysinfo):		
-		if sysinfo.architecture == KatzSystemArchitecture.X86:
-			if sysinfo.buildnumber < WindowsMinBuild.WIN_VISTA.value:
-				return LsaTemplate_NT5.get_template(sysinfo)
-			else:
-				return LsaTemplate_NT6.get_template(sysinfo)
-
-		elif sysinfo.architecture == KatzSystemArchitecture.X64:
-			if sysinfo.buildnumber < WindowsMinBuild.WIN_VISTA.value:
-				return LsaTemplate_NT5.get_template(sysinfo)
-			else:
-				return LsaTemplate_NT6.get_template(sysinfo)
+	def get_template(sysinfo):
+		if sysinfo.buildnumber < WindowsMinBuild.WIN_VISTA.value:
+			return LsaTemplate_NT5.get_template(sysinfo)
+		else:
+			return LsaTemplate_NT6.get_template(sysinfo)

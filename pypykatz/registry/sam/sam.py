@@ -147,6 +147,7 @@ class SAM:
 	def to_dict(self):
 		t = {}
 		t['HBoot_key'] = self.hashed_bootkey
+		t['machine_sid'] = self.machine_sid
 		t['local_users'] = []
 		for secret in self.secrets:
 			t['local_users'].append( secret.to_dict())

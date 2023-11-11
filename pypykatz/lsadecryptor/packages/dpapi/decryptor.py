@@ -60,7 +60,7 @@ class DpapiDecryptor(PackageDecryptor):
 			c = DpapiCredential()
 			c.luid = dpapi_entry.LogonId
 			c.key_guid = dpapi_entry.KeyUid
-			c.masterkey = dec_masterkey.hex()
+			c.masterkey = dec_masterkey
 			c.sha1_masterkey = sha_masterkey
 			self.credentials.append(c)	
 	

@@ -3,8 +3,7 @@ import hashlib
 import math
 
 from pypykatz import logger
-from pypykatz.commons.common import hexdump
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsBuild, WindowsMinBuild
+from pypykatz.commons.common import KatzSystemArchitecture, WindowsBuild, WindowsMinBuild, UniversalEncoder
 
 
 class RDPCredential:
@@ -17,33 +16,39 @@ class RDPCredential:
         self.isencrypted = None 
         self.servername = ''
         self.serverfqdn = ''
+        self.port = ''
+        self.authenticationlevel = ''
+        self.autologon  = ''
 
     def to_dict(self):
         t = {}
         t['credtype'] = self.credtype
-        t['domainname'] = self.cachedir
-        t['username'] = self.PRT
-        t['password'] = self.key_guid
-        t['password_raw'] = self.dpapi_key
+        t['servername'] = self.servername
+        t['domainname'] = self.domainname
+        t['username'] = self.username
+        t['password'] = self.password
+        t['password_raw'] = self.password_raw
+        t['port'] = self.port
+        t['authenticationlevel'] = self.authenticationlevel
+        t['autologon'] = self.autologon
         return t
         
     def to_json(self):
-        return json.dumps(self.to_dict())
+        return json.dumps(self.to_dict(), cls=UniversalEncoder)
         
     def __str__(self):
         t = '\t== RDP Credential ==\n'
         t += '\t\tdomainname %s\n' % self.domainname
         t += '\t\tusername %s\n' % self.username
         t += '\t\tpassword \'%s\'\n' % self.password
-
-        try:
+        if isinstance(self.password_raw, bytes):
             t += '\t\tpassword_raw %s\n' % self.password_raw.hex()
-        except:
-            t += '\t\tpassword_raw %s\n' % self.password_raw
-
         t += '\t\tisencrypted: %s\n' % str(self.isencrypted)
         t += '\t\tservername: \'%s\'\n' % self.servername
         t += '\t\tserverfqdn: \'%s\'\n' % self.serverfqdn
+        t += '\t\tport: \'%s\'\n' % self.port
+        t += '\t\tauthenticationlevel: \'%s\'\n' % self.authenticationlevel
+        t += '\t\tautologon: \'%s\'\n' % self.autologon
         return t
 
 class RDPCredentialDecryptorMstsc:
@@ -121,9 +126,13 @@ class RDPCredentialDecryptorMstsc:
                                                     string = string[:marker]
                                                 szProperty = string.decode('utf-8')
 
-                                                szProperties = ["ServerName", "ServerFqdn", "ServerNameUsedForAuthentication", "UserSpecifiedServerName", "UserName", "Domain", "Password", "SmartCardReaderName", "RDmiUsername", "PasswordContainsSCardPin"]
+                                                szProperties = ["ServerName", "ServerFqdn", "ServerNameUsedForAuthentication", "UserSpecifiedServerName", "UserName", "Domain", "Password", "SmartCardReaderName", "RDmiUsername", "PasswordContainsSCardPin", "MCSPort", "AuthenticationLevel", "AutoLogon"]
                                                 if szProperty in szProperties:
                                                     value = ''
+                                                    if property.dwType == 1:
+                                                        value = property.pvData
+                                                        #print("{:<35s}\t[dword] {}".format(szProperty))
+    
                                                     if property.dwType == 3:
                                                         value = "TRUE" if property.pvData else "FALSE"
                                                         #print("{:<35s}\t[bool] {}".format(szProperty, "TRUE" if property.pvData else "FALSE"))
@@ -161,6 +170,12 @@ class RDPCredentialDecryptorMstsc:
                                                         cred.username = value
                                                     elif szProperty == "Domain":
                                                         cred.domainname = value
+                                                    elif szProperty == "MCSPort":
+                                                        cred.port = value
+                                                    elif szProperty == "AuthenticationLevel":
+                                                        cred.authenticationlevel = value
+                                                    elif szProperty == "AutoLogon":
+                                                        cred.autologon = value
                                                     elif szProperty == "Password" and (property.dwFlags & 0x800):
                                                         cred.password_raw = value
                                                         if self.process is None:

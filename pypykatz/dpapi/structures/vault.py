@@ -348,3 +348,197 @@ class BCRYPT_KEY_DATA_BLOB_HEADER:
 			else:
 				t += '%s: %s \r\n' % (k, str(self.__dict__[k]))
 		return t
+
+
+# from impacket.dpapi
+class VAULT_INTERNET_EXPLORER:
+	def __init__(self):
+		self.version = None
+		self.count = None
+		self.unk0 = None
+		self.id1 = None
+		self.username_length = None
+		self.username = None
+		self.id2 = None
+		self.resource_length = None
+		self.resource = None
+		self.id3 = None
+		self.password_length = None
+		self.password = None #encrypted VAULT_INTERNET_EXPLORER_KEYS
+
+	@staticmethod
+	def from_bytes(data):
+		return VAULT_INTERNET_EXPLORER.from_buffer(io.BytesIO(data))
+
+	@staticmethod
+	def from_buffer(buff):
+		sk = VAULT_INTERNET_EXPLORER()
+		sk.version = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.count = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.unk0 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.id1 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.username_length = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.username = buff.read(sk.username_length)
+		sk.id2 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.resource_length = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.resource = buff.read(sk.resource_length)
+		sk.id3 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.password_length = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.password = buff.read(sk.password_length)
+
+		return sk
+
+	def __str__(self):
+		t = '== VAULT_INTERNET_EXPLORER ==\r\n'
+		for k in self.__dict__:
+			if isinstance(self.__dict__[k], list):
+				for i, item in enumerate(self.__dict__[k]):
+					t += '   %s: %s: %s' % (k, i, str(item))
+			else:
+				t += '%s: %s \r\n' % (k, str(self.__dict__[k]))
+		return t
+
+
+class VAULT_WIN_BIO_KEY:
+	def __init__(self):
+		self.version = None
+		self.count = None
+		self.unk0 = None
+		self.id1 = None
+		self.sid_length = None
+		self.sid = None
+		self.id2 = None
+		self.name_length = None
+		self.name = None
+		self.id3 = None
+		self.key_size = None
+		self.biokey = None #encrypted VAULT_WIN_BIO_KEY_KEYS
+
+	@staticmethod
+	def from_bytes(data):
+		return VAULT_WIN_BIO_KEY.from_buffer(io.BytesIO(data))
+
+	@staticmethod
+	def from_buffer(buff):
+		sk = VAULT_WIN_BIO_KEY()
+		sk.version = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.count = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.unk0 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.id1 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.sid_length = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.sid = buff.read(sk.sid_length)
+		sk.id2 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.name_length = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.name = buff.read(sk.name_length)
+		sk.id3 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.key_size = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.biokey = buff.read(sk.key_size)
+
+		return sk
+
+	def __str__(self):
+		t = '== VAULT_WIN_BIO_KEY ==\r\n'
+		for k in self.__dict__:
+			if isinstance(self.__dict__[k], list):
+				for i, item in enumerate(self.__dict__[k]):
+					t += '   %s: %s: %s' % (k, i, str(item))
+			else:
+				t += '%s: %s \r\n' % (k, str(self.__dict__[k]))
+		return t
+
+
+class NGC_LOCAL_ACCOOUNT:
+	def __init__(self):
+		self.version = None
+		self.unlock_length = None
+		self.iv_length = None
+		self.cipher_length = None
+		self.is_zero = None
+		self.unlock = None
+		self.iv = None
+		self.cipher = None
+
+	@staticmethod
+	def from_bytes(data):
+		return NGC_LOCAL_ACCOOUNT.from_buffer(io.BytesIO(data))
+
+	@staticmethod
+	def from_buffer(buff):
+		sk = NGC_LOCAL_ACCOOUNT()
+		sk.version = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.unlock_length = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.iv_length = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.cipher_length = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.is_zero = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.unlock = buff.read(sk.unlock_length)
+		sk.iv = buff.read(sk.iv_length)
+		sk.cipher = buff.read(sk.cipher_length)
+
+		return sk
+
+	def __str__(self):
+		t = '== NGC_LOCAL_ACCOOUNT ==\r\n'
+		for k in self.__dict__:
+			if isinstance(self.__dict__[k], list):
+				for i, item in enumerate(self.__dict__[k]):
+					t += '   %s: %s: %s' % (k, i, str(item))
+			else:
+				t += '%s: %s \r\n' % (k, str(self.__dict__[k]))
+		return t
+
+
+class VAULT_NGC_ACCOOUNT:
+	def __init__(self):
+		self.version = None
+		self.count = None
+		self.unk0 = None
+		self.id1 = None
+		self.sid_length = None
+		self.sid = None
+		self.id2 = None
+		self.name_length = None
+		self.name = None
+		self.id3 = None
+		self.key_size = None
+		self.blob = None #encrypted VAULT_NGC_ACCOOUNT_KEYS
+		self.blobdata = None #encrypted VAULT_NGC_ACCOOUNT_KEYS
+
+	@staticmethod
+	def from_bytes(data):
+		return VAULT_NGC_ACCOOUNT.from_buffer(io.BytesIO(data))
+
+	@staticmethod
+	def from_buffer(buff):
+		sk = VAULT_NGC_ACCOOUNT()
+		sk.version = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.count = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.unk0 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.id1 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.sid_length = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.sid = buff.read(sk.sid_length)
+		sk.id2 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.name_length = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.name = buff.read(sk.name_length)
+		sk.id3 = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.key_size = int.from_bytes(buff.read(4), 'little', signed = False)
+		sk.blobdata = buff.read(sk.key_size)
+		sk.blob = NGC_LOCAL_ACCOOUNT.from_bytes(sk.blobdata)
+
+		return sk
+
+	def __str__(self):
+		t = '== VAULT_NGC_ACCOOUNT ==\r\n'
+		for k in self.__dict__:
+			if isinstance(self.__dict__[k], list):
+				for i, item in enumerate(self.__dict__[k]):
+					t += '   %s: %s: %s' % (k, i, str(item))
+			else:
+				t += '%s: %s \r\n' % (k, str(self.__dict__[k]))
+		return t
+
+
+VAULT_KNOWN_SCHEMAS = {
+	'WinBio Key': VAULT_WIN_BIO_KEY,
+	'NGC Local Accoount Logon Vault Credential': VAULT_NGC_ACCOOUNT,
+	'Internet Explorer': VAULT_INTERNET_EXPLORER,
+}

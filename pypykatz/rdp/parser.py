@@ -80,7 +80,7 @@ class RDPCredParser:
 					except Exception as e:
 						#import traceback
 						#traceback.print_exc()
-						print(e)
+						pass
 		
 		for target in targets:
 			target.start()

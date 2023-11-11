@@ -278,7 +278,7 @@ class DPAPI:
 		"""
 		from pypykatz.pypykatz import pypykatz
 		katz = pypykatz.go_live()
-		sids = [katz.logon_sessions[x].sid for x in katz.logon_sessions]
+		# sids = [katz.logon_sessions[x].sid for x in katz.logon_sessions]
 		for x in katz.logon_sessions:
 			for dc in katz.logon_sessions[x].dpapi_creds:
 				logger.debug('[DPAPI] Got masterkey for GUID %s via live LSASS method' % dc.key_guid)
@@ -397,9 +397,9 @@ class DPAPI:
 						mks[mkf.guid] = dec_key
 		
 		if mkf.backupkey is not None:
-			if mkf.guid in self.masterkeys:
-				mks[mkf.guid] = self.masterkeys[mkf.guid]
-				
+			if mkf.guid in self.backupkeys:
+				bks[mkf.guid] = self.backupkeys[mkf.guid]
+
 			else:
 				for user_key in self.prekeys:
 					dec_key = mkf.backupkey.decrypt(user_key)
@@ -411,7 +411,7 @@ class DPAPI:
 				if key is not None:
 					dec_key = mkf.backupkey.decrypt(key)
 					if dec_key:
-						self.masterkeys[mkf.guid] = dec_key
+						self.backupkeys[mkf.guid] = dec_key
 						bks[mkf.guid] = dec_key
 					
 		return mks, bks

@@ -183,20 +183,17 @@ class LogonSession:
 		if len(self.livessp_creds) > 0:
 			for cred in self.livessp_creds:
 				t+= str(cred)
+		if len(self.dpapi_creds) > 0:
+			for cred in self.dpapi_creds:
+				t+= str(cred)
 		if len(self.kerberos_creds) > 0:
 			for cred in self.kerberos_creds:
-				t+= str(cred)
-		if len(self.wdigest_creds) > 0:
-			for cred in self.wdigest_creds:
 				t+= str(cred)
 		if len(self.credman_creds) > 0:
 			for cred in self.credman_creds:
 				t+= str(cred)
 		if len(self.tspkg_creds) > 0:
 			for cred in self.tspkg_creds:
-				t+= str(cred)
-		if len(self.dpapi_creds) > 0:
-			for cred in self.dpapi_creds:
 				t+= str(cred)
 		if len(self.cloudap_creds) > 0:
 			for cred in self.cloudap_creds:
@@ -236,6 +233,10 @@ class LogonSession:
 			yield [self.luid, t['credtype'], self.session_id, self.sid, t['credtype'], '', self.domainname, self.username, 'masterkey', str(cred.get_masterkey_hex())]
 			yield [self.luid, t['credtype'], self.session_id, self.sid, t['credtype'], '', self.domainname, self.username, 'sha1', str(t['dpapi_key_sha1'])]
 			yield [self.luid, t['credtype'], self.session_id, self.sid, t['credtype'], '', self.domainname, self.username, 'PRT', str(t['PRT'])]
+		for cred in self.dpapi_creds:
+			t = cred.to_dict()
+			yield [self.luid, t['credtype'], self.session_id, self.sid, t['credtype'], '', self.domainname, self.username, 'dpapi_key', t['dpapi_key']]
+			yield [self.luid, t['credtype'], self.session_id, self.sid, t['credtype'], '', self.domainname, self.username, 'dpapi_key_sha1', t['dpapi_key_sha1']]
 
 	def to_grep_rows(self):
 		for cred in self.msv_creds:
