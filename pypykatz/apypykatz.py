@@ -10,7 +10,7 @@ import asyncio
 import base64
 import traceback
 
-from pypykatz.commons.common import KatzSystemInfo
+from pypykatz.commons.generics import KatzSystemInfo
 from pypykatz.alsadecryptor import CredmanTemplate, MsvTemplate, \
 	MsvDecryptor, WdigestTemplate, LsaTemplate, WdigestDecryptor, \
 	LiveSspTemplate, LiveSspDecryptor, SspDecryptor, SspTemplate, \
@@ -19,7 +19,7 @@ from pypykatz.alsadecryptor import CredmanTemplate, MsvTemplate, \
 	CloudapDecryptor, KerberosTemplate, KerberosDecryptor
 from pypykatz.alsadecryptor.packages.msv.decryptor import LogonSession
 from pypykatz import logger
-from pypykatz.commons.common import UniversalEncoder
+from pypykatz.commons.generics import UniversalEncoder
 from minidump.aminidumpfile import AMinidumpFile
 from minikerberos.common.ccache import CCACHE
 from minikerberos.common.kirbi import Kirbi

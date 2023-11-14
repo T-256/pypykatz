@@ -5,7 +5,7 @@
 #
 
 
-from pypykatz.commons.common import WindowsMinBuild, KatzSystemArchitecture, WindowsBuild
+from pypykatz.commons.generics import WindowsMinBuild, KatzSystemArchitecture, WindowsBuild
 from pypykatz.alsadecryptor.win_datatypes import LUID, GUID, POINTER, FILETIME, ULONG
 from pypykatz.alsadecryptor.package_commons import PackageTemplate
 

@@ -10,7 +10,7 @@
 import logging
 
 from pypykatz.pypykatz import pypykatz
-from pypykatz.commons.common import *
+from pypykatz.commons.generics import *
 
 from . import *
 

@@ -5,7 +5,7 @@
 #
 
 from pypykatz.alsadecryptor.win_datatypes import ULONG, PVOID, POINTER
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsMinBuild
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsMinBuild
 from pypykatz.alsadecryptor.package_commons import PackageTemplate
 
 class LsaTemplate_NT5(PackageTemplate):

@@ -28,7 +28,7 @@ from pypykatz.dpapi.structures.vault import VAULT_VCRD, VAULT_VPOL, VAULT_VPOL_K
 from unicrypto.hashlib import md4 as MD4
 from unicrypto.symmetric import AES, MODE_GCM, MODE_CBC
 from winacl.dtyp.wcee.pvkfile import PVKFile
-from pypykatz.commons.common import UniversalEncoder, base64_decode_url
+from pypykatz.commons.generics import UniversalEncoder, base64_decode_url
 
 
 from cryptography.hazmat.primitives.asymmetric.padding import PKCS1v15

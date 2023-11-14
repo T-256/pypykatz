@@ -6,7 +6,7 @@
 
 from abc import ABC, abstractmethod
 from pypykatz import logger
-from pypykatz.commons.common import hexdump
+from pypykatz.commons.generics import hexdump
 from pypykatz.alsadecryptor.win_datatypes import RTL_AVL_TABLE
 
 class Logger:

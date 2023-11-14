@@ -13,7 +13,7 @@ from unicrypto.symmetric import RC4, DES, AES, expand_DES_key, MODE_CBC
 from pypykatz.registry.security.structures import *
 from pypykatz.registry.security.acommon import *
 from pypykatz.registry import logger
-from pypykatz.commons.common import hexdump
+from pypykatz.commons.generics import hexdump
 
 #
 # The SECURITY hive holds all the domain-cached-credentials for the domain users who logged in to the machine

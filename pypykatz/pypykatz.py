@@ -9,7 +9,7 @@ import json
 import traceback
 import base64
 
-from pypykatz.commons.common import KatzSystemInfo
+from pypykatz.commons.generics import KatzSystemInfo
 from pypykatz.lsadecryptor import CredmanTemplate, MsvTemplate, \
 	MsvDecryptor, WdigestTemplate, LsaTemplate, WdigestDecryptor, \
 	LiveSspTemplate, LiveSspDecryptor, SspDecryptor, SspTemplate, \
@@ -19,7 +19,7 @@ from pypykatz.lsadecryptor import CredmanTemplate, MsvTemplate, \
 
 from pypykatz.lsadecryptor.packages.msv.decryptor import LogonSession
 from pypykatz import logger
-from pypykatz.commons.common import UniversalEncoder
+from pypykatz.commons.generics import UniversalEncoder
 from minidump.minidumpfile import MinidumpFile
 from minikerberos.common.ccache import CCACHE
 from minikerberos.common.kirbi import Kirbi

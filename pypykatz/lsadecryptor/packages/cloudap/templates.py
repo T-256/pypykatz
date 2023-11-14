@@ -1,4 +1,4 @@
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsMinBuild, WindowsBuild
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsMinBuild, WindowsBuild
 from pypykatz.commons.win_datatypes import ULONG, LUID, KIWI_GENERIC_PRIMARY_CREDENTIAL, POINTER, DWORD, PVOID, PSID, GUID, DWORD64
 from pypykatz.lsadecryptor.package_commons import PackageTemplate
 

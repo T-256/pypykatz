@@ -6,7 +6,7 @@
 
 
 from minidump.win_datatypes import ULONG, PVOID, POINTER
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsMinBuild, WindowsBuild
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsMinBuild, WindowsBuild
 from pypykatz.lsadecryptor.package_commons import PackageTemplate
 from pypykatz import logger
 

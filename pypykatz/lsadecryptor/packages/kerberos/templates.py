@@ -5,7 +5,7 @@
 #
 import io
 from minidump.win_datatypes import ULONG64, FILETIME, PCWSTR, SIZE_T, BOOL  #WCHAR, ANYSIZE_ARRAY
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsMinBuild, WindowsBuild
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsMinBuild, WindowsBuild
 from pypykatz.commons.win_datatypes import POINTER, PVOID, ULONG, LIST_ENTRY, \
 	DWORD, LSA_UNICODE_STRING, PKERB_EXTERNAL_NAME, KIWI_GENERIC_PRIMARY_CREDENTIAL, \
 	LUID, PLSAISO_DATA_BLOB

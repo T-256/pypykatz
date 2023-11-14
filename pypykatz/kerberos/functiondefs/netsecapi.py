@@ -1,7 +1,7 @@
 import enum
 import io
 from ctypes import pointer,c_byte, c_wchar, c_char_p, addressof, c_ubyte, c_int16, c_longlong, cast, byref, Structure, c_char, c_buffer, string_at, windll, c_void_p, c_uint32, POINTER, c_wchar_p, WinError, sizeof, c_int32, c_uint16, create_string_buffer
-from pypykatz.commons.common import hexdump
+from pypykatz.commons.generics import hexdump
 
 BYTE        = c_ubyte
 UCHAR       = BYTE

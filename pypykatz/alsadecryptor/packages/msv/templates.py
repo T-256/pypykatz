@@ -4,7 +4,7 @@
 #  Tamas Jos (@skelsec)
 #
 from pypykatz import logger
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsMinBuild, WindowsBuild
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsMinBuild, WindowsBuild
 from pypykatz.alsadecryptor.win_datatypes import BOOLEAN, HANDLE, USHORT, ULONG, LSA_UNICODE_STRING, LSAISO_DATA_BLOB, \
 	BYTE, PVOID, WORD, DWORD, POINTER, LUID, PSID, ANSI_STRING
 from pypykatz.alsadecryptor.package_commons import PackageTemplate

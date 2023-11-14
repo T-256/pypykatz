@@ -15,7 +15,7 @@ import traceback
 from minikerberos.common.utils import print_table
 from minikerberos.protocol.asn1_structs import KRB_CRED
 from pypykatz.commons.filetime import filetime_to_dt
-from pypykatz.commons.common import geterr
+from pypykatz.commons.generics import geterr
 from pypykatz.kerberos.kerberos import get_TGS, get_TGT, generate_targets, \
 	brute, asreproast, spnroast, s4u, process_keytab, list_ccache, \
 	del_ccache, roast_ccache, ccache_to_kirbi, kirbi_to_ccache

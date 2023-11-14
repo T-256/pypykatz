@@ -5,8 +5,8 @@
 #
 import io
 #from minidump.win_datatypes import *
-from pypykatz.commons.common import hexdump
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsMinBuild
+from pypykatz.commons.generics import hexdump
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsMinBuild
 from pypykatz.commons.win_datatypes import LSA_UNICODE_STRING, ULONG, PVOID, PWSTR, POINTER, LIST_ENTRY
 from pypykatz.lsadecryptor.package_commons import PackageTemplate
 

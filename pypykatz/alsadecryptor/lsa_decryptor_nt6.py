@@ -6,7 +6,7 @@
 
 
 from pypykatz import logger
-from pypykatz.commons.common import hexdump
+from pypykatz.commons.generics import hexdump
 from unicrypto.symmetric import MODE_CBC, MODE_CFB, AES, TDES
 from pypykatz.alsadecryptor.package_commons import PackageDecryptor
 

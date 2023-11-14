@@ -266,7 +266,7 @@ class KDBM:
 
 	@staticmethod
 	def from_buffer(buff):
-		from pypykatz.commons.common import hexdump
+		from pypykatz.commons.generics import hexdump
 		sk = KDBM()		
 		sk.size = int.from_bytes(buff.read(4), 'little', signed = False)
 		sk.version = int.from_bytes(buff.read(4), 'little', signed = False)

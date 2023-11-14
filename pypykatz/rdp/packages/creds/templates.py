@@ -1,10 +1,10 @@
 
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsBuild, WindowsMinBuild
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsBuild, WindowsMinBuild
 from pypykatz.commons.win_datatypes import POINTER, ULONG, \
 	KIWI_GENERIC_PRIMARY_CREDENTIAL, PVOID, DWORD, LUID, \
 	LSA_UNICODE_STRING, WORD
 from minidump.win_datatypes import PCWSTR
-from pypykatz.commons.common import hexdump
+from pypykatz.commons.generics import hexdump
 
 class RDPCredsTemplate:
 	def __init__(self):

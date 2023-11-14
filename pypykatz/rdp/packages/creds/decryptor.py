@@ -3,7 +3,7 @@ import hashlib
 import math
 
 from pypykatz import logger
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsBuild, WindowsMinBuild, UniversalEncoder
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsBuild, WindowsMinBuild, UniversalEncoder
 
 
 class RDPCredential:

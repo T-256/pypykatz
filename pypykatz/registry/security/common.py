@@ -6,7 +6,7 @@
 
 from unicrypto.hashlib import md4 as MD4
 from pypykatz.dpapi.structures.system import DPAPI_SYSTEM
-from pypykatz.commons.common import hexdump
+from pypykatz.commons.generics import hexdump
 
 #
 # These classes used to "standardise" the different secrets that can be obtained from the SECURITY hive

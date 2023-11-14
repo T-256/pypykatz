@@ -6,7 +6,7 @@
 
 
 from minidump.win_datatypes import FILETIME, ULONG
-from pypykatz.commons.common import WindowsMinBuild, KatzSystemArchitecture, WindowsBuild
+from pypykatz.commons.generics import WindowsMinBuild, KatzSystemArchitecture, WindowsBuild
 from pypykatz.commons.win_datatypes import LUID, GUID, POINTER
 from pypykatz.lsadecryptor.package_commons import PackageTemplate
 

@@ -6,7 +6,7 @@
 
 #import io
 #from minidump.win_datatypes import *
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsBuild, WindowsMinBuild
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsBuild, WindowsMinBuild
 from pypykatz.alsadecryptor.win_datatypes import KIWI_GENERIC_PRIMARY_CREDENTIAL, POINTER, PVOID, LUID
 from pypykatz.alsadecryptor.package_commons import PackageTemplate
 

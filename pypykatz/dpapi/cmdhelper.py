@@ -1,4 +1,4 @@
-from pypykatz.commons.common import UniversalEncoder, hexdump
+from pypykatz.commons.generics import UniversalEncoder, hexdump
 import argparse
 import platform
 

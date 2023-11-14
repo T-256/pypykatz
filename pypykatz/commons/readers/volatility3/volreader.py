@@ -10,7 +10,7 @@
 # they probably have more important things to deal with :)
 #
 
-from pypykatz.commons.common import *
+from pypykatz.commons.generics import *
 
 from . import *
 

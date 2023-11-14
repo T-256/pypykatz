@@ -6,7 +6,7 @@
 
 #import io
 #from minidump.win_datatypes import *
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsBuild, WindowsMinBuild
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsBuild, WindowsMinBuild
 from pypykatz.commons.win_datatypes import LUID, ULONG, POINTER
 from pypykatz.lsadecryptor.package_commons import PackageTemplate
 

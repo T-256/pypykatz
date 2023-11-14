@@ -13,10 +13,10 @@ import base64
 
 from pypykatz import logger
 from pypykatz.pypykatz import pypykatz
-from pypykatz.commons.common import UniversalEncoder
+from pypykatz.commons.generics import UniversalEncoder
 from pypykatz.lsadecryptor.packages.msv.decryptor import LogonSession
 from minidump.minidumpfile import MinidumpFile
-from pypykatz.commons.common import KatzSystemInfo
+from pypykatz.commons.generics import KatzSystemInfo
 
 
 class LSACMDHelper:

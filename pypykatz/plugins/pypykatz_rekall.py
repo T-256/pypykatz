@@ -3,7 +3,7 @@ __author__ = ("Tamas Jos <info@skelsec.com>")
 
 from pypykatz.pypykatz import pypykatz
 from pypykatz.commons.readers.rekall.rekallreader import RekallReader
-from pypykatz.commons.common import *
+from pypykatz.commons.generics import *
 import json
 import ntpath
 import os

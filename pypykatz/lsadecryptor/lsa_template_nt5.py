@@ -5,7 +5,7 @@
 #
 
 from minidump.win_datatypes import POINTER
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsMinBuild
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsMinBuild
 from pypykatz.lsadecryptor.package_commons import PackageTemplate
 
 class LsaTemplate_NT5(PackageTemplate):

@@ -5,7 +5,7 @@ from pypykatz import logger
 
 from pypykatz.commons.winapi.local.function_defs.netapi32 import NetLocalGroupGetMembers
 from pypykatz.remote.live.common.common import is_port_up
-from pypykatz.commons.common import UniversalEncoder
+from pypykatz.commons.generics import UniversalEncoder
 
 
 class LocalGroupEnumThread(Thread):

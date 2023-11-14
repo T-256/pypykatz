@@ -16,7 +16,7 @@ import base64
 import traceback
 
 from pypykatz import logger
-from pypykatz.commons.common import UniversalEncoder
+from pypykatz.commons.generics import UniversalEncoder
 from pypykatz.alsadecryptor.packages.msv.decryptor import LogonSession
 
 

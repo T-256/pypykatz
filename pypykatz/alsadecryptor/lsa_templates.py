@@ -5,7 +5,7 @@
 #
 
 
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsMinBuild
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsMinBuild
 from pypykatz.alsadecryptor.lsa_template_nt5 import LsaTemplate_NT5
 from pypykatz.alsadecryptor.lsa_template_nt6 import LsaTemplate_NT6
 

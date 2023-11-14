@@ -5,7 +5,7 @@
 #
 from pypykatz import logger
 from minidump.win_datatypes import BOOLEAN, HANDLE
-from pypykatz.commons.common import KatzSystemArchitecture, WindowsMinBuild, WindowsBuild
+from pypykatz.commons.generics import KatzSystemArchitecture, WindowsMinBuild, WindowsBuild
 from pypykatz.commons.win_datatypes import USHORT, ULONG, LSA_UNICODE_STRING, LSAISO_DATA_BLOB, \
 	BYTE, PVOID, WORD, DWORD, POINTER, LUID, PSID, ANSI_STRING
 from pypykatz.lsadecryptor.package_commons import PackageTemplate

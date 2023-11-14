@@ -17,7 +17,7 @@ from pypykatz.registry.system.system import *
 from pypykatz.registry.software.software import *
 
 from pypykatz.commons.winapi.processmanipulator import ProcessManipulator
-from pypykatz.commons.common import UniversalEncoder
+from pypykatz.commons.generics import UniversalEncoder
 
 
 class LiveRegistry:

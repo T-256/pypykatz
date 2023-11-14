@@ -4,7 +4,7 @@
 #  Tamas Jos (@skelsec)
 #
 from pypykatz.registry import logger
-from pypykatz.commons.common import hexdump
+from pypykatz.commons.generics import hexdump
 
 #
 # The SYSTEM hive holds the BootKey, which is used as an initial key to decrypt everything in the registry.

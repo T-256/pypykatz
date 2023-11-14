@@ -7,7 +7,7 @@ from typing import List
 from pypykatz.commons.kerberosticket import KerberosTicket, KerberosTicketType
 from pypykatz.lsadecryptor.package_commons import PackageDecryptor
 from pypykatz.commons.win_datatypes import PLIST_ENTRY, PRTL_AVL_TABLE
-from pypykatz.commons.common import WindowsMinBuild
+from pypykatz.commons.generics import WindowsMinBuild
 
 class KerberosCredential:
 	def __init__(self):

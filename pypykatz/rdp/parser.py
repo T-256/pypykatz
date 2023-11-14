@@ -2,7 +2,7 @@
 import platform
 from pypykatz import logger
 from minidump.minidumpfile import MinidumpFile
-from pypykatz.commons.common import KatzSystemInfo
+from pypykatz.commons.generics import KatzSystemInfo
 from pypykatz.rdp.packages.creds.templates import RDPCredsTemplate
 from pypykatz.rdp.packages.creds.decryptor import RDPCredentialDecryptorLogonpasswords, RDPCredentialDecryptorMstsc
 

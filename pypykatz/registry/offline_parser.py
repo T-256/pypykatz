@@ -8,7 +8,7 @@ import json
 from aiowinreg.hive import AIOWinRegHive
 
 from pypykatz.registry import logger
-from pypykatz.commons.common import UniversalEncoder
+from pypykatz.commons.generics import UniversalEncoder
 from pypykatz.registry.sam.sam import *
 from pypykatz.registry.security.security import *
 from pypykatz.registry.system.system import *

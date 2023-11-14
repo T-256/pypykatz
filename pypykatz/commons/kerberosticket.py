@@ -7,7 +7,7 @@
 import datetime
 from asn1crypto import core
 from pypykatz.commons.filetime import filetime_to_dt
-from pypykatz.commons.common import WindowsBuild, GenericReader
+from pypykatz.commons.generics import WindowsBuild, GenericReader
 from pypykatz.commons.win_datatypes import LSAISO_DATA_BLOB, ENC_LSAISO_DATA_BLOB
 from minikerberos.protocol.asn1_structs import EncryptionKey, PrincipalName, \
 	TicketFlags, KrbCredInfo, krb5_pvno, EncryptedData, KRBCRED, Ticket, \

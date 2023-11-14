@@ -5,7 +5,7 @@
 #
 import io
 #from minidump.win_datatypes import *
-from pypykatz.commons.common import KatzSystemArchitecture
+from pypykatz.commons.generics import KatzSystemArchitecture
 from pypykatz.alsadecryptor.win_datatypes import POINTER, ULONG, \
 	KIWI_GENERIC_PRIMARY_CREDENTIAL, PVOID, DWORD, LUID, LSA_UNICODE_STRING
 from pypykatz.alsadecryptor.package_commons import PackageTemplate
