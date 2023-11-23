@@ -19,7 +19,7 @@ from pypykatz.lsadecryptor import CredmanTemplate, MsvTemplate, \
 
 from pypykatz.lsadecryptor.packages.msv.decryptor import LogonSession
 from pypykatz import logger
-from pypykatz.commons.generics import UniversalEncoder
+from pypykatz.commons.generics import UniversalEncoder as JsonEncoder
 from minidump.minidumpfile import MinidumpFile
 from minikerberos.common.ccache import CCACHE
 from minikerberos.common.kirbi import Kirbi
@@ -59,7 +59,7 @@ class pypykatz:
 		return t
 		
 	def to_json(self):
-		return json.dumps(self.to_dict(), cls = UniversalEncoder, indent=4, sort_keys=True)
+		return json.dumps(self.to_dict(), cls = JsonEncoder, indent=4, sort_keys=True)
 
 	def to_grep(self):
 		res = ':'.join(LogonSession.grep_header) + '\r\n'
